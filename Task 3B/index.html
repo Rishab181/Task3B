@@ -1,0 +1,211 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+    <!-- <script src="https://unpkg.com/aframe-environment-component"></script> -->
+    <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
+</head>
+
+<body>
+    <a-scene>
+
+        <!-- Load assets -->
+        <a-assets>
+            <img id="village" src="Images/Coorg_2.jpeg">
+            <img id="wood" src="Images/Wood texture.jpeg">
+            <img src="Images/Banana Leaf_Kailpodh.png" id="banana leaf">
+            <img src="Images/Garland_Kailpodh.png" id="garland">
+            <img src="Images/i.png" id="i">
+            <!-- <img src="Images/Prayers info.png" id="info1"> -->
+            <img src="Images/Entrance text.png" id="enterance.t">
+            <img src="Images/Concrete .png" id="concrete">
+
+            <img src="Images/Kailpodh/Clothes.jpeg" id="clothes">
+            <img src="Images/Kailpodh/Guns.webp" id="guns img">
+            <img src="Images/Kailpodh/Old man.jpeg" id="old man">
+            <img src="Images/Kailpodh/Pooja.jpeg" id="pooja">
+
+            <img src="Images/Photo Gallery.png" id="photo.g">
+            <img src="Images/Weapons gallery.png" id="weapons.g">
+            <img src="Images/Instructions.png" id="instructions">
+
+            <a-asset-item id="hut" src="3D Assets/old_hut/scene.gltf"></a-asset-item>
+            <a-asset-item id="man" src="3D Assets/Guy praying.gltf"></a-asset-item>
+            <a-asset-item id="woman" src="3D Assets/Woman in saree/Woman praying.gltf"></a-asset-item>
+            <a-asset-item id="rifle" src="3D Assets/Rifle_Kailpodh/scene.gltf"></a-asset-item>
+            <a-asset-item id="sword" src="3D Assets/Sword_Kailpodh/Sword.gltf"></a-asset-item>
+            <a-asset-item id="coconut" src="3D Assets/Coconut/scene.gltf"></a-asset-item>
+            <a-asset-item id="room" src="3D Assets/Empty Room/Room2.gltf"></a-asset-item>
+            <a-asset-item id="room_p" src="3D Assets/Empty Room/Weapons wall.gltf"></a-asset-item>
+            <a-asset-item id="bow_arrow" src="3D Assets/bow__arrow/scene.gltf"></a-asset-item>
+            <a-asset-item id="fence" src="3D Assets/Fencing/Fence.gltf"></a-asset-item>
+
+            <audio id="pray" src="Sounds/Prayer description.mp3"></audio>
+            <audio id="gunshot" src="Sounds/GunShot.mp3"></audio>
+            <audio id="sword_s" src="Sounds/Sword.mp3"></audio>
+        </a-assets>
+
+
+
+        <!-- Creating Environment -->
+        <a-entity environment="preset: forest; dressingAmount: 300; skyType: atmosphere">
+        </a-entity>
+
+        <!-- Enterance -->
+        <a-cylinder position="-1 0 10" height="5" radius="0.02" src="#wood"></a-cylinder>
+        <a-cylinder position="1 0 10" height="5" radius="0.02" src="#wood"></a-cylinder>
+        <a-box position="0 2 10.1" scale="3 1 0.01" src="#wood"></a-box>
+        <!-- <a-image src="#enterance.t" scale="1.5 1.2 1.2" position="0 2 10.2"></a-image> -->
+        <a-text value="Welcome to Kodagu" position="-1.2 2.25 10.2" scale="1.2 1.2 1.2"></a-text>
+        <a-text value="KAILPODH" position="-0.8 1.7 10.2" scale="1.5 1.5 1.5"></a-text>
+        <a-image src="#instructions" position="2 1.047 13 " scale="1.5 1 1" rotation="0 -15 0"></a-image>
+
+        <!-- Signages -->
+        <a-image src="#photo.g" scale="1.2 0.8 1" position="-1.5 0.5 6"></a-image>
+        <a-image src="#photo.g" scale="1.2 0.8 1" position="9.979 0.5 -7.912"></a-image>
+        <a-image src="#weapons.g" scale="1.2 0.8 1" position="1.5 0.5 6"></a-image>
+        <a-image src="#weapons.g" scale="1.2 0.8 1" position="-10 0.5 -7.802"></a-image>
+
+        <!-- Loading 3D assets -->
+        <!-- House -->
+        <a-entity id="houses" position="0 0 0">
+            <a-entity gltf-model="#hut" scale="2.5 2.5 2.5"></a-entity>
+            <a-entity gltf-model="#hut" scale="2.5 2.5 2.5" position="-5 0 -10"></a-entity>
+            <!-- <a-entity gltf-model="#hut" scale="2.5 2.5 2.5" position="-7.6 0 -8.14" rotation="0 90 0">
+            </a-entity> -->
+        </a-entity>
+
+        <!-- Prayer setting -->
+        <a-entity id="prayer_setup" position="0 0 0">
+            <a-entity gltf-model="#rifle" scale="0.6 0.6 0.6" position="2.36 0.59 1.55" rotation="76.83 -90 -90">
+            </a-entity>
+            <a-entity gltf-model="#rifle" scale="0.6 0.6 0.6" position="2.38 0.58 1.77" rotation="76.36 -90 -90">
+            </a-entity>
+            <a-entity gltf-model="#rifle" scale="0.6 0.6 0.6" position="2.38 0.58 2.1" rotation="76.36 -90 -90">
+            </a-entity>
+            <a-entity gltf-model="#sword" scale="0.076 0.088 0.100" position="2.380 0.58 2.011"
+                rotation="3.188 135.3 55.16"> </a-entity>
+            <a-entity gltf-model="#coconut" scale="0.15 0.15 0.15" position="1.716 0.1 1.89" rotation="76.83 -90 -90">
+            </a-entity>
+            <a-entity gltf-model="#coconut" scale="0.15 0.15 0.15" position="1.716 0.1 2.1" rotation="76.83 -90 -90">
+            </a-entity>
+
+            <a-image src="#banana leaf" position="1.637 0.029 2.048" scale="0.95 0.509 1" rotation="90 0 90">
+            </a-image>
+            <a-image src="#garland" position="2.39 0.84 2.048" rotation="14.71 90 0" scale="1 0.579 1">
+            </a-image>
+        </a-entity>
+
+        <!-- Fencing -->
+        <!-- <a-entity gltf-model="#fence" scale="1 1 1" position="0 0.2 14" rotation="0 0 0">
+        </a-entity> -->
+
+        <!-- Persons -->
+        <a-entity gltf-model="#man" scale="0.35 0.35 0.35" position="0.8 0.245 2.5" rotation="0 90 0">
+        </a-entity>
+        <a-entity gltf-model="#woman" scale="0.8 0.8 0.8" position="0.8 0.1 2" rotation="0 90 0"></a-entity>
+
+        <!-- Stand for the Guns -->
+        <a-entity id="gun_stand" position="0 0 0">
+            <a-cylinder height="2" radius="0.02" position="2.5 0 2.5" src="#wood"></a-cylinder>
+            <a-cylinder height="2" radius="0.02" position="2.5 0 1.5" src="#wood"></a-cylinder>
+            <a-box position="2.5 0 2" scale="0.02 0.2" src="#wood"></a-box>
+            <a-box position="2.5 0.3 2" scale="0.02 0.2" src="#wood"></a-box>
+            <a-box position="2.5 0.6 2" scale="0.02 0.2" src="#wood"></a-box>
+            <a-box position="2.5 0.9 2" scale="0.02 0.2" src="#wood"></a-box>
+        </a-entity>
+
+        <!-- Information pannel -->
+        <a-entity id="info" position="0 0 0">
+            <a-cylinder position="-2 0 2" radius="0.02" height="0.3" src="#wood"></a-cylinder>
+            <a-box position="-2 0.3 2" scale="0.5 0.3 0.05" src="#wood"></a-box>
+            <a-image src="#i" scale="0.25 0.25 0.25" position="-1.95 0.31 2.1" sound="src:#pray; on:click">
+            </a-image>
+            <!-- <a-image src="#info1" scale="0.535 0.267 0.267" position="-1.97 0.311 2.1"> -->
+            </a-image>
+        </a-entity>
+
+        <!-- Lighting -->
+        <a-entity light="type: directional; color: #FFF; intensity: 0.8" position="-4.95 3.9 6.8">
+        </a-entity>
+
+
+        <!-- PHOTO GALLERY -->
+        <a-entity position="-40 0 0">
+            <a-text value="PHOTO GALLERY" position="17.5 5.5 -10" scale="4 4 4"></a-text>
+
+            <a-image src="#pooja" position="15 3 -10" scale="3 2 2"
+                animation__scale_up="property:scale; to: 4.5 3 3; startEvents: mouseenter; dur: 500" ;
+                animation__scale_down="property:scale; to:3 2 2; startEvents: mouseleave; dur: 500">
+            </a-image>
+
+            <a-image src="#clothes" position="19 3 -10" scale="3 2 2"
+                animation="property:scale; to: 4 3 3; startEvents:mouseenter"
+                animation__scale_up="property:scale; to: 4.5 3 3; startEvents: mouseenter; dur: 500" ;
+                animation__scale_down="property:scale; to:3 2 2; startEvents: mouseleave; dur: 500">
+            </a-image>
+
+            <a-image src="#guns img" position="23 3 -10" scale="3 2 2"
+                animation__scale_up="property:scale; to: 4.5 3 3; startEvents: mouseenter; dur: 500" ;
+                animation__scale_down="property:scale; to:3 2 2; startEvents: mouseleave; dur: 500" ;>
+            </a-image>
+
+            <a-image src="#old man" position="27 3 -10" scale="3 2 2"
+                animation="property:scale; to: 4 3 3; startEvents:mouseenter; dur:500"
+                animation__scale_down="property:scale; to:3 2 2; startEvents: mouseleave; dur: 500">
+            </a-image>
+        </a-entity>
+
+        <!-- Gallery shelves -->
+        <!-- Left -->
+        <a-entity gltf-model="#room" position="-19.2 0.284 -7.745" scale="1 0.707 1.073" rotation="0 90 0">
+        </a-entity>
+        <!-- Right -->
+        <a-entity gltf-model="#room_p" src="#wood" position="19.2 3.01 -10" scale="1 0.707 1.073" rotation="0 -90 -90">
+        </a-entity>
+
+        <!-- Path -->
+        <a-plane position="0 0.01 6.446" rotation="-90 0 0" scale="2.03 6.56 1" color="#D6D58E"></a-plane>
+        <a-plane position="-6.6 0.08 4.2" rotation="-90 90 0" scale="2.04 11.12 1" color="#D6D58E"></a-plane>
+        <a-plane position="-12.1 0.08 0.675" rotation="-90 0 0" scale="2.03 9.155 1" color="#D6D58E"></a-plane>
+        <a-plane position="6.6 0.08 4.2" rotation="-90 90 0" scale="2.04 11.12 1" color="#D6D58E"></a-plane>
+        <a-plane position="12.1 0.08 0.675" rotation="-90 0 0" scale="2.03 9.155 1" color="#D6D58E"></a-plane>
+        <a-plane position="-0.06 0.01 -7" rotation="-90 90 0" scale="2.03 22.4 1" color="#D6D58E"></a-plane>
+
+        <!-- 3D Gallery -->
+        <a-entity id="weapons" position="3 0 -2">
+
+            <a-text value="WEAPONS GALLERY" scale="4 4 4" position="11.53 6.2 -7.8745"></a-text>
+            <a-entity gltf-model="#rifle" scale="1.5 1.5 1.5" position="11.71 3.88 -6.57" rotation="90 90 0"
+                sound="src:#gunshot; on:click"
+                animation__mouseenter="property: position; to: 11.71 2.5 -4; startEvents: mouseenter; dur: 1000" ;
+                animation__mouseleave="property: position; to: 11.71 3.88 -6.57; startEvents: mouseleave; dur: 1000" ;
+                animation="property:rotation; to: 90 449 0; loop:true; dur:5000">
+            </a-entity>
+
+            <a-entity gltf-model="#sword" scale="0.25 0.25 0.25" position="16 3.88 -6.57" rotation="0 0 50"
+                sound="src:#sword_s; on:click"
+                animation__mouseenter="property: position; to: 16 2.5 -4; startEvents: mouseenter; dur: 1000" ;
+                animation__mouseleave="property: position; to: 16 3.88 -6.57; startEvents: mouseleave; dur: 1000" ;
+                animation="property:rotation; to:0 359 50; loop:true; dur:5000; easing:linear"></a-entity>
+
+            <a-entity gltf-model="#bow_arrow" scale="0.015 0.015 0.015" position="21 3.88 -6.57" rotation="90 0 0"
+                animation__mouseenter="property: position; to: 21 2.5 -4; startEvents: mouseenter; dur: 1000" ;
+                animation__mouseleave="property: position; to: 21 3.88 -6.57; startEvents: mouseleave; dur: 1000" ;
+                animation="property:rotation; to:90 359 0; loop:true; dur:5000; easing:linear">
+            </a-entity>
+
+        </a-entity>
+
+        <!-- Creating Camera and pointer -->
+        <a-camera position="0 1 15">
+            <a-cursor scale="0.5 0.5 0.5" color="white" />
+            <!-- <a-entity id="mouseCursor" cursor="rayOrigin: mouse"></a-entity> -->
+        </a-camera>
+
+
+    </a-scene>
+</body>
+
+</html>
